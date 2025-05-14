@@ -1,0 +1,81 @@
+/* src/components/SelfieCapture.css */
+.selfie-capture-container {
+    /* Container styles */
+  }
+  
+  .camera-area {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 20px auto;
+    background-color: #222; /* Dark background for camera feed */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    min-height: 300px; /* Maintain size before video loads */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .camera-placeholder {
+    color: #aaa;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .camera-feed {
+    display: block;
+    width: 100%;
+    height: auto;
+    transform: scaleX(-1); /* Mirror effect */
+    opacity: 0; /* Hidden until active */
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .camera-feed.active {
+    opacity: 1;
+  }
+  
+  /* Optional: Add an overlay guide */
+  .camera-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 70%; /* Example size */
+      height: 80%; /* Example size */
+      border: 3px dashed rgba(255, 255, 255, 0.7);
+      border-radius: 50%; /* Oval shape */
+      transform: translate(-50%, -50%);
+      pointer-events: none; /* Allow clicks through */
+      box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.3); /* Dim area outside */
+  }
+  
+  
+  .controls {
+    text-align: center;
+    margin-bottom: 15px;
+    padding-top: 10px; /* Space above buttons */
+  }
+  
+  .controls button {
+    margin: 5px 10px; /* Spacing between buttons */
+  }
+  
+  .cancel-button {
+    background-color: #aaa;
+  }
+  .cancel-button:hover:not(:disabled) {
+    background-color: #888;
+  }
+  
+  .instructions {
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 20px; /* Space below instructions */
+  }
+  
+  .camera-error {
+      margin-bottom: 15px; /* Ensure space below error message */
+  }

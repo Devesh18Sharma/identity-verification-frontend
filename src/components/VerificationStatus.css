@@ -1,0 +1,52 @@
+/* src/components/VerificationStatus.css */
+/* (Keep previous version - it already had rules) */
+.verification-status-container {
+    text-align: center;
+  }
+  
+  .status-indicator {
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 15px auto;
+    display: inline-block; /* Fit content width */
+    font-weight: bold;
+    border: 1px solid transparent;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    min-width: 100px; /* Ensure consistent width */
+  }
+  
+  .status-pending,
+  .status-processing {
+    background-color: var(--warning-color);
+    border-color: #eea236;
+    color: #fff;
+  }
+  
+  .status-approved {
+    background-color: var(--success-color);
+    border-color: #4cae4c;
+    color: #fff;
+  }
+  
+  .status-failed,
+  .status-rejected,
+  .status-expired,
+  .status-error {
+    background-color: var(--error-color);
+    border-color: #d43f3a;
+    color: #fff;
+  }
+  
+  .status-unknown,
+  .status-null { /* Style for initial null state */
+    background-color: #eee;
+    border-color: var(--border-color);
+    color: var(--text-color);
+  }
+  
+  .status-message {
+    margin-top: 10px;
+    font-size: 1.1em;
+    color: var(--light-text-color);
+  }

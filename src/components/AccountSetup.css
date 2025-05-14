@@ -1,0 +1,22 @@
+/* src/components/AccountSetup.css */
+.account-setup-container {
+    /* Styles for the container */
+     max-width: 450px; /* Limit width for better form readability */
+     margin-left: auto;
+     margin-right: auto;
+  }
+  
+  .form-group {
+    margin-bottom: 20px; /* More spacing for forms */
+  }
+  
+  /* Style validation errors differently from submission errors if needed */
+  .validation-error {
+      background-color: #fff3cd;
+      color: #856404;
+      border-color: #ffeeba;
+      text-align: left; /* Align left for readability */
+  }
+  .submission-error {
+      /* Use default error styles */
+  }

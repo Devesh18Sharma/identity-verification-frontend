@@ -1,0 +1,251 @@
+/* src/styles/global.css */
+/* (Keep the previous version, adding visually-hidden and potentially some layout styles) */
+
+:root {
+  /* Define some color variables */
+  --primary-color: #1a535c; /* Dark Teal */
+  --secondary-color: #4ecdc4; /* Light Teal */
+  --accent-color: #f7fff7; /* Very Light Green/Off-white */
+  --error-color: #d9534f; /* Red */
+  --error-background: #fdecea;
+  --success-color: #5cb85c; /* Green */
+  --warning-color: #f0ad4e; /* Orange */
+  --text-color: #333;
+  --light-text-color: #555;
+  --border-color: #ccc;
+  --background-color: #f4f7f6;
+  --component-background: #fff;
+  --component-alt-background: #fafafa;
+}
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  font-size: 16px; /* Base font size */
+}
+
+/* Main container for the app content */
+#app-container {
+  max-width: 700px; /* Slightly narrower for focus */
+  margin: 30px auto;
+  padding: 0; /* Remove padding here, add to header/main/footer */
+  background-color: var(--component-background);
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 60px); /* Ensure footer stays down somewhat */
+}
+
+.app-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 25px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.app-header h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 1.8em;
+    color: white; /* Override default h1 color */
+}
+
+.app-main {
+    padding: 25px;
+    flex-grow: 1; /* Allow main content to expand */
+}
+
+.app-footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 0.85em;
+    color: var(--light-text-color);
+    border-top: 1px solid #eee;
+}
+
+
+h1, h2 {
+  color: var(--primary-color);
+  margin-top: 0; /* Remove default top margin often present */
+  margin-bottom: 1.2em;
+}
+
+h2 {
+    font-size: 1.5em;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+button {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 12px 25px; /* Slightly larger buttons */
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 15px;
+  display: inline-block; /* Ensure it doesn't take full width unless intended */
+}
+
+button:hover:not(:disabled) {
+  background-color: var(--primary-color);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+input[type="file"],
+input[type="email"],
+input[type="password"] {
+   display: block;
+   width: calc(100% - 24px); /* Account for padding/border */
+   padding: 12px;
+   margin-top: 5px;
+   margin-bottom: 15px;
+   border: 1px solid var(--border-color);
+   border-radius: 4px;
+   font-size: 1rem;
+   box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+input[type="file"] {
+    padding: 10px; /* File inputs often need slightly different padding */
+     cursor: pointer;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 2px rgba(78, 205, 196, 0.3); /* Subtle focus ring */
+}
+
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+  color: var(--light-text-color);
+}
+
+p {
+    margin-bottom: 1.2em;
+    color: var(--text-color);
+}
+
+.error-message {
+  color: var(--error-color);
+  background-color: var(--error-background);
+  border: 1px solid var(--error-color);
+  padding: 12px 15px;
+  border-radius: 4px;
+  margin: 15px 0; /* Give space around errors */
+  text-align: center;
+  font-size: 0.95em;
+}
+
+.loading-message {
+    text-align: center;
+    font-style: italic;
+    color: var(--light-text-color);
+    padding: 20px;
+    font-size: 1.1em;
+}
+
+/* Style for distinct sections */
+.component-section {
+    padding: 25px;
+    margin-bottom: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    background-color: var(--component-alt-background);
+     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.component-section:last-child {
+    margin-bottom: 0; /* No bottom margin for the last section */
+}
+
+video {
+    display: block;
+    margin: 10px auto;
+    max-width: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+/* Utility class to visually hide elements but keep them accessible */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Basic spinner animation */
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border-left-color: var(--secondary-color);
+  margin: 20px auto;
+  animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Make images responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Basic Responsive adjustments */
+@media (max-width: 768px) {
+    #app-container {
+        margin: 15px;
+        max-width: none; /* Allow full width on smaller screens */
+         min-height: calc(100vh - 30px);
+    }
+    .app-main {
+        padding: 15px;
+    }
+     .app-header {
+        padding: 10px 15px;
+    }
+    .app-header h1 {
+         font-size: 1.5em;
+    }
+    h2 {
+        font-size: 1.3em;
+    }
+    button {
+        padding: 10px 20px;
+    }
+}
